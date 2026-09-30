@@ -1,0 +1,83 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Local environment and config
+.env
+.env.*
+!.env.example
+*.local
+
+# Generated model checkpoints and large serialized models
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+*.keras
+*.safetensors
+*.onnx
+*.joblib
+*.pkl
+*.pickle
+checkpoints/
+wandb/
+mlruns/
+
+# Cached classical feature vectors (regenerable; keep out of git)
+results/classical/cache/
+
+# Large datasets. Directory layout stays visible through .gitkeep files.
+# Shared split files under data/splits/ are not ignored so the group can
+# version one fixed split once it exists.
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
