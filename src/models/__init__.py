@@ -1,6 +1,6 @@
 """Model interfaces for classical baselines and neural sequential models.
 
-Classical baselines: Person 1.
+Classical baselines: Dan.
 Recurrent model: Person 2.
 Other neural sequential models: Person 3 and Person 4.
 

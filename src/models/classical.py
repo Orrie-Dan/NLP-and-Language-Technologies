@@ -1,6 +1,6 @@
 """Classical baselines.
 
-Ownership: Person 1.
+Ownership: Dan.
 
 The inputs are audio clips, so a text TF-IDF pipeline is not a baseline
 for this dataset. The audio representation (for example MFCCs or another

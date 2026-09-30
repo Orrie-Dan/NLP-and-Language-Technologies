@@ -62,9 +62,9 @@ The input is audio, not documents. Text TF-IDF is not a baseline for these files
 | `data/processed/` | Data after agreed preprocessing, if a processed copy is stored. Contents are gitignored. |
 | `data/splits/` | The single fixed train/validation/test split in `shared_split.csv`. Every model must load this file. |
 | `notebooks/` | Person-specific notebooks that call shared code. They are not a second implementation of the pipeline. |
-| `src/data/` | Dataset loading. Person 1. |
-| `src/preprocessing/` | Shared preprocessing decisions. Person 1. |
-| `src/models/classical.py` | Classical audio baselines. Person 1. Representation not chosen yet. |
+| `src/data/` | Dataset loading. Dan. |
+| `src/preprocessing/` | Shared preprocessing decisions. Dan. |
+| `src/models/classical.py` | Classical audio baselines. Dan. Representation not chosen yet. |
 | `src/models/neural.py` | Recurrent and other neural sequential models. Persons 2, 3, and 4. |
 | `src/evaluation/` | Metrics used by every model. |
 | `src/utils/` | Reproducibility helpers, including the shared random seed. |
@@ -95,13 +95,13 @@ Shared preprocessing decisions
     └── neural sequential model
 ```
 
-Person 1's classical models must not create a separate train/validation/test split.
+Dan's classical models must not create a separate train/validation/test split.
 
 ## Team structure
 
 Names are not recorded here. Roles are by person number.
 
-**Person 1**
+**Dan**
 
 - data loading and the shared split
 - exploratory data analysis

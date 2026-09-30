@@ -1,6 +1,6 @@
 """Dataset loading for the Swahili audio challenge.
 
-Ownership: Person 1.
+Ownership: Dan.
 
 Paths are resolved from this file's location, so callers do not need a
 machine-specific absolute path. The official ``Test.csv`` file is unlabeled

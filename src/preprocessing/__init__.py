@@ -1,6 +1,6 @@
 """Audio preprocessing for the classical baselines.
 
-Ownership: Person 1.
+Ownership: Dan.
 
 ``extract_features`` turns one clip into a fixed-size vector. The defaults on
 ``PreprocessingConfig`` are Phase 4 implementation defaults, not a selected
