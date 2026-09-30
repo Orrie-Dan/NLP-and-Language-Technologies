@@ -1,0 +1,16 @@
+check,passed,n_examples,n_classes,duration_seconds,duration_mode,aggregation,include_delta,include_delta_delta,normalize_amplitude,feature_dimension,all_finite,reproducible,detail
+A_6s_static_mean,True,14.0,12.0,6.0,fixed,mean,False,False,False,13.0,True,True,feature_dimension=13; documented=13
+B_8s_static_mean,True,14.0,12.0,8.0,fixed,mean,False,False,False,13.0,True,True,feature_dimension=13; documented=13
+C_F_6s_static_mean_std,True,14.0,12.0,6.0,fixed,mean_std,False,False,False,26.0,True,True,feature_dimension=26; documented=26
+delta_6s_mean,True,14.0,12.0,6.0,fixed,mean,True,False,False,26.0,True,True,feature_dimension=26; documented=26
+delta_6s_mean_std,True,14.0,12.0,6.0,fixed,mean_std,True,False,False,52.0,True,True,feature_dimension=52; documented=52
+D_6s_delta_delta_mean,True,14.0,12.0,6.0,fixed,mean,True,True,False,39.0,True,True,feature_dimension=39; documented=39
+D_F_6s_delta_delta_mean_std,True,14.0,12.0,6.0,fixed,mean_std,True,True,False,78.0,True,True,feature_dimension=78; documented=78
+I_8s_delta_delta_mean_std,True,14.0,12.0,8.0,fixed,mean_std,True,True,False,78.0,True,True,feature_dimension=78; documented=78
+padding_and_truncation,True,,,,,,,,,,,,id_54acpxzvh5dm.wav padded to 96000 samples; id_iihfba01m6c4.wav truncated to 128000 samples. Padding is zeros at the end. Truncation keeps the start. No WAV was written.
+duration_mode_none,True,,,,none,mean,,,,13.0,True,,id_54acpxzvh5dm.wav kept 39680 samples and produced a finite 13-vector.
+normalization_option,True,,,,,mean,,,True,13.0,True,,Per-clip peak normalization is finite and changes the 6 s static mean vector. It is available and not selected.
+I_duration_changes_values_not_width,True,,,,,,,,,13.0,True,,id_54acpxzvh5dm.wav: 6 s and 8 s static means both have width 13 and are not the same vector.
+J_source_wav_unchanged,True,,,,,,,,,,,,SHA-256 of each subset WAV member and the zip size/mtime match the pre-check snapshot.
+shared_split_unchanged,True,,,,,,,,,,,,SHA-256 of data/splits/shared_split.csv matches the pre-check snapshot.
+phase3_results_unchanged,True,,,,,,,,,,,,SHA-256 of the Phase 3 investigation files matches the pre-check snapshot.
