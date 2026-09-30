@@ -1,0 +1,111 @@
+{
+  "sample_rate_hz_used": 16000,
+  "parameters_are_candidates_not_a_decision": true,
+  "frame_count_formula": "1 + (n_samples - frame_length) // hop_length, no centering and no padding, frame must fit inside the clip",
+  "frame_counts_on_labeled_pool": {
+    "n": 4200,
+    "min": 246.0,
+    "median": 430.0,
+    "mean": 479.6557142857143,
+    "p95": 728.2999999999984,
+    "max": 6222.0
+  },
+  "n_clips_checked_by_computing_mfcc": 15,
+  "mfcc_shape_mismatches": [],
+  "seconds_to_compute_three_mfcc_sizes_on_checked_clips": 3.1530569000169635,
+  "delta_check": {
+    "reference_word_id": "id_54acpxzvh5dm.wav",
+    "width": 2,
+    "static_shape": [
+      246,
+      13
+    ],
+    "delta_shape": [
+      246,
+      13
+    ],
+    "delta_delta_shape": [
+      246,
+      13
+    ],
+    "stacked_static_delta_delta_shape": [
+      246,
+      39
+    ],
+    "adopted": false
+  },
+  "candidates": [
+    {
+      "n_mfcc": 13,
+      "n_mels": 40,
+      "frame_length_samples": 400,
+      "hop_length_samples": 160,
+      "frame_length_ms": 25.0,
+      "hop_length_ms": 10.0,
+      "n_fft": 512,
+      "window": "hann",
+      "mel_scale": "HTK",
+      "fmin_hz": 0.0,
+      "fmax_hz": 8000.0,
+      "pre_emphasis": 0.0,
+      "log_floor": 1e-10,
+      "dct": "orthonormal DCT-II, c0 retained, no lifter",
+      "median_frames_per_labeled_clip": 430.0,
+      "max_frames_per_labeled_clip": 6222,
+      "median_sequence_feature_values": 5590.0,
+      "float32_megabytes_all_labeled_sequences_at_median_length": 93.912,
+      "float32_megabytes_all_labeled_sequences_at_max_length": 1358.8848,
+      "float32_megabytes_mean_pool": 0.2184,
+      "float32_megabytes_mean_and_std_pool": 0.4368,
+      "delta_and_delta_delta_multiply_feature_axis_by": 3
+    },
+    {
+      "n_mfcc": 20,
+      "n_mels": 40,
+      "frame_length_samples": 400,
+      "hop_length_samples": 160,
+      "frame_length_ms": 25.0,
+      "hop_length_ms": 10.0,
+      "n_fft": 512,
+      "window": "hann",
+      "mel_scale": "HTK",
+      "fmin_hz": 0.0,
+      "fmax_hz": 8000.0,
+      "pre_emphasis": 0.0,
+      "log_floor": 1e-10,
+      "dct": "orthonormal DCT-II, c0 retained, no lifter",
+      "median_frames_per_labeled_clip": 430.0,
+      "max_frames_per_labeled_clip": 6222,
+      "median_sequence_feature_values": 8600.0,
+      "float32_megabytes_all_labeled_sequences_at_median_length": 144.48,
+      "float32_megabytes_all_labeled_sequences_at_max_length": 2090.592,
+      "float32_megabytes_mean_pool": 0.336,
+      "float32_megabytes_mean_and_std_pool": 0.672,
+      "delta_and_delta_delta_multiply_feature_axis_by": 3
+    },
+    {
+      "n_mfcc": 40,
+      "n_mels": 40,
+      "frame_length_samples": 400,
+      "hop_length_samples": 160,
+      "frame_length_ms": 25.0,
+      "hop_length_ms": 10.0,
+      "n_fft": 512,
+      "window": "hann",
+      "mel_scale": "HTK",
+      "fmin_hz": 0.0,
+      "fmax_hz": 8000.0,
+      "pre_emphasis": 0.0,
+      "log_floor": 1e-10,
+      "dct": "orthonormal DCT-II, c0 retained, no lifter",
+      "median_frames_per_labeled_clip": 430.0,
+      "max_frames_per_labeled_clip": 6222,
+      "median_sequence_feature_values": 17200.0,
+      "float32_megabytes_all_labeled_sequences_at_median_length": 288.96,
+      "float32_megabytes_all_labeled_sequences_at_max_length": 4181.184,
+      "float32_megabytes_mean_pool": 0.672,
+      "float32_megabytes_mean_and_std_pool": 1.344,
+      "delta_and_delta_delta_multiply_feature_axis_by": 3
+    }
+  ]
+}

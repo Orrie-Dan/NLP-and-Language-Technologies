@@ -1,0 +1,455 @@
+{
+  "n_clips": 4200,
+  "low_energy_rule": {
+    "fraction_of_clip_peak": 0.01,
+    "definition": "Fraction of PCM samples whose absolute amplitude is strictly below 1% of that clip's peak absolute amplitude. If the peak is 0, the proportion is 1. This rule was fixed for description. It was not tuned on a validation split and is not a silence label."
+  },
+  "duration_seconds": {
+    "n": 4200,
+    "min": 2.48,
+    "max": 62.24,
+    "mean": 4.8165523809523805,
+    "median": 4.32,
+    "std_ddof1": 3.3635424684759507,
+    "p05": 3.2,
+    "p25": 3.84,
+    "p50": 4.32,
+    "p75": 5.04,
+    "p95": 7.299199999999983
+  },
+  "n_frames": {
+    "n": 4200,
+    "min": 39680.0,
+    "max": 995840.0,
+    "mean": 77064.8380952381,
+    "median": 69120.0,
+    "std_ddof1": 53816.67949561522,
+    "p05": 51200.0,
+    "p25": 61440.0,
+    "p50": 69120.0,
+    "p75": 80640.0,
+    "p95": 116787.19999999972
+  },
+  "rms_amplitude": {
+    "n": 4200,
+    "min": 19.280140587600542,
+    "max": 5500.325303259703,
+    "mean": 1007.5429424890364,
+    "median": 859.8128834234972,
+    "std_ddof1": 650.800688372215,
+    "p05": 245.1091597734269,
+    "p25": 519.231013496078,
+    "p50": 859.8128834234972,
+    "p75": 1376.5296565971848,
+    "p95": 2278.815136725611
+  },
+  "peak_abs_amplitude": {
+    "n": 4200,
+    "min": 169.0,
+    "max": 32768.0,
+    "mean": 14231.247142857143,
+    "median": 12660.5,
+    "std_ddof1": 8200.589178228596,
+    "p05": 3299.85,
+    "p25": 8007.0,
+    "p50": 12660.5,
+    "p75": 19305.75,
+    "p95": 30307.299999999992
+  },
+  "low_energy_proportion": {
+    "n": 4200,
+    "min": 0.06964557926829268,
+    "max": 0.9853426032110092,
+    "mean": 0.7699804993636837,
+    "median": 0.8483116119311347,
+    "std_ddof1": 0.18151334392760637,
+    "p05": 0.34604803856382976,
+    "p25": 0.715615234375,
+    "p50": 0.8483116119311347,
+    "p75": 0.8882275632624858,
+    "p95": 0.9232884018539251
+  },
+  "sample_rate_hz_counts": {
+    "16000": 4200
+  },
+  "n_channels_counts": {
+    "1": 4200
+  },
+  "bit_depth_counts": {
+    "16": 4200
+  },
+  "sample_width_bytes_counts": {
+    "2": 4200
+  },
+  "compression_type_counts": {
+    "NONE": 4200
+  },
+  "n_zero_frame_clips": 0,
+  "n_zero_peak_clips": 0,
+  "n_clips_at_int16_full_scale": 150,
+  "duration_tail_counts": {
+    "at_least_10_seconds": 64,
+    "at_least_20_seconds": 21,
+    "at_least_30_seconds": 13,
+    "at_least_60_seconds": 9
+  },
+  "duration_tail_note": "Counts are clips with duration greater than or equal to the stated number of seconds. The cut points describe the tail. No clip was removed.",
+  "format_is_uniform": true,
+  "sampling_period_seconds": 6.25e-05,
+  "duration_by_class": [
+    {
+      "Swahili_word": "hapana",
+      "English_translation": "no",
+      "n": 350,
+      "duration_min": 2.64,
+      "duration_median": 4.4,
+      "duration_mean": 4.914285714285715,
+      "duration_max": 62.08
+    },
+    {
+      "Swahili_word": "kumi",
+      "English_translation": "ten",
+      "n": 350,
+      "duration_min": 2.48,
+      "duration_median": 4.28,
+      "duration_mean": 4.840594285714286,
+      "duration_max": 62.208
+    },
+    {
+      "Swahili_word": "mbili",
+      "English_translation": "two",
+      "n": 350,
+      "duration_min": 2.72,
+      "duration_median": 4.24,
+      "duration_mean": 4.900937142857143,
+      "duration_max": 62.208
+    },
+    {
+      "Swahili_word": "moja",
+      "English_translation": "one",
+      "n": 350,
+      "duration_min": 2.64,
+      "duration_median": 4.24,
+      "duration_mean": 4.9199085714285715,
+      "duration_max": 62.08
+    },
+    {
+      "Swahili_word": "nane",
+      "English_translation": "eight",
+      "n": 350,
+      "duration_min": 2.48,
+      "duration_median": 4.352,
+      "duration_mean": 5.005851428571429,
+      "duration_max": 62.24
+    },
+    {
+      "Swahili_word": "ndio",
+      "English_translation": "yes",
+      "n": 350,
+      "duration_min": 2.56,
+      "duration_median": 4.24,
+      "duration_mean": 4.749165714285715,
+      "duration_max": 62.08
+    },
+    {
+      "Swahili_word": "nne",
+      "English_translation": "four",
+      "n": 350,
+      "duration_min": 2.64,
+      "duration_median": 4.24,
+      "duration_mean": 4.691611428571429,
+      "duration_max": 61.952
+    },
+    {
+      "Swahili_word": "saba",
+      "English_translation": "seven",
+      "n": 350,
+      "duration_min": 2.64,
+      "duration_median": 4.32,
+      "duration_mean": 4.667291428571429,
+      "duration_max": 29.312
+    },
+    {
+      "Swahili_word": "sita",
+      "English_translation": "six",
+      "n": 350,
+      "duration_min": 2.8,
+      "duration_median": 4.32,
+      "duration_mean": 4.856411428571429,
+      "duration_max": 62.08
+    },
+    {
+      "Swahili_word": "tano",
+      "English_translation": "five",
+      "n": 350,
+      "duration_min": 2.72,
+      "duration_median": 4.24,
+      "duration_mean": 4.720045714285715,
+      "duration_max": 41.856
+    },
+    {
+      "Swahili_word": "tatu",
+      "English_translation": "three",
+      "n": 350,
+      "duration_min": 2.56,
+      "duration_median": 4.32,
+      "duration_mean": 4.785325714285714,
+      "duration_max": 27.6
+    },
+    {
+      "Swahili_word": "tisa",
+      "English_translation": "nine",
+      "n": 350,
+      "duration_min": 2.8,
+      "duration_median": 4.4,
+      "duration_mean": 4.7472,
+      "duration_max": 25.36
+    }
+  ],
+  "shortest_clips": [
+    {
+      "Word_id": "id_54acpxzvh5dm.wav",
+      "Swahili_word": "kumi",
+      "English_translation": "ten",
+      "duration_seconds": 2.48,
+      "n_frames": 39680,
+      "sample_rate_hz": 16000,
+      "low_energy_proportion": 0.20970262096774195,
+      "peak_abs_amplitude": 2199.0,
+      "rms_amplitude": 433.9343245343385
+    },
+    {
+      "Word_id": "id_mk7gl5456k76.wav",
+      "Swahili_word": "nane",
+      "English_translation": "eight",
+      "duration_seconds": 2.48,
+      "n_frames": 39680,
+      "sample_rate_hz": 16000,
+      "low_energy_proportion": 0.18374495967741936,
+      "peak_abs_amplitude": 4695.0,
+      "rms_amplitude": 549.2095204278864
+    },
+    {
+      "Word_id": "id_injlouhxg1hg.wav",
+      "Swahili_word": "ndio",
+      "English_translation": "yes",
+      "duration_seconds": 2.56,
+      "n_frames": 40960,
+      "sample_rate_hz": 16000,
+      "low_energy_proportion": 0.13994140625,
+      "peak_abs_amplitude": 4086.0,
+      "rms_amplitude": 644.863207507208
+    }
+  ],
+  "longest_clips": [
+    {
+      "Word_id": "id_yt42jv5i5xcd.wav",
+      "Swahili_word": "nane",
+      "English_translation": "eight",
+      "duration_seconds": 62.24,
+      "n_frames": 995840,
+      "sample_rate_hz": 16000,
+      "low_energy_proportion": 0.89200172718509,
+      "peak_abs_amplitude": 32768.0,
+      "rms_amplitude": 1391.9541411390326
+    },
+    {
+      "Word_id": "id_7rs86tc1t0mh.wav",
+      "Swahili_word": "mbili",
+      "English_translation": "two",
+      "duration_seconds": 62.208,
+      "n_frames": 995328,
+      "sample_rate_hz": 16000,
+      "low_energy_proportion": 0.649316607188786,
+      "peak_abs_amplitude": 1972.0,
+      "rms_amplitude": 67.45946375160705
+    },
+    {
+      "Word_id": "id_qconko34be1q.wav",
+      "Swahili_word": "kumi",
+      "English_translation": "ten",
+      "duration_seconds": 62.208,
+      "n_frames": 995328,
+      "sample_rate_hz": 16000,
+      "low_energy_proportion": 0.4407421473122428,
+      "peak_abs_amplitude": 965.0,
+      "rms_amplitude": 43.668427142547436
+    }
+  ],
+  "highest_low_energy_clips": [
+    {
+      "Word_id": "id_78tuhlpzyz6s.wav",
+      "Swahili_word": "tano",
+      "English_translation": "five",
+      "duration_seconds": 41.856,
+      "n_frames": 669696,
+      "sample_rate_hz": 16000,
+      "low_energy_proportion": 0.9853426032110092,
+      "peak_abs_amplitude": 14319.0,
+      "rms_amplitude": 386.8657637051721
+    },
+    {
+      "Word_id": "id_m0bfpb44o6k8.wav",
+      "Swahili_word": "tatu",
+      "English_translation": "three",
+      "duration_seconds": 27.6,
+      "n_frames": 441600,
+      "sample_rate_hz": 16000,
+      "low_energy_proportion": 0.9802898550724638,
+      "peak_abs_amplitude": 7849.0,
+      "rms_amplitude": 178.78779556965233
+    },
+    {
+      "Word_id": "id_74k4b2h66tms.wav",
+      "Swahili_word": "saba",
+      "English_translation": "seven",
+      "duration_seconds": 29.312,
+      "n_frames": 468992,
+      "sample_rate_hz": 16000,
+      "low_energy_proportion": 0.9796947495906113,
+      "peak_abs_amplitude": 12846.0,
+      "rms_amplitude": 503.2096731026272
+    }
+  ],
+  "example_clips": [
+    {
+      "Word_id": "id_1225z4zxeq84.wav",
+      "Swahili_word": "hapana",
+      "English_translation": "no",
+      "duration_seconds": 4.4,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_2h75a3mrb5or.wav",
+      "Swahili_word": "kumi",
+      "English_translation": "ten",
+      "duration_seconds": 4.32,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_0fh08ayr6x92.wav",
+      "Swahili_word": "mbili",
+      "English_translation": "two",
+      "duration_seconds": 4.24,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_byp380m199nh.wav",
+      "Swahili_word": "moja",
+      "English_translation": "one",
+      "duration_seconds": 4.24,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_01rtyjt9oqie.wav",
+      "Swahili_word": "nane",
+      "English_translation": "eight",
+      "duration_seconds": 4.352,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_090vpkdgsp0f.wav",
+      "Swahili_word": "ndio",
+      "English_translation": "yes",
+      "duration_seconds": 4.24,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_52lvcoiercqe.wav",
+      "Swahili_word": "nne",
+      "English_translation": "four",
+      "duration_seconds": 4.24,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_gbqpxxdrcg3y.wav",
+      "Swahili_word": "saba",
+      "English_translation": "seven",
+      "duration_seconds": 4.32,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_0ofmn0pdceyk.wav",
+      "Swahili_word": "sita",
+      "English_translation": "six",
+      "duration_seconds": 4.32,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_1hqdop8jr077.wav",
+      "Swahili_word": "tano",
+      "English_translation": "five",
+      "duration_seconds": 4.24,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_2c8zo2ytl8dc.wav",
+      "Swahili_word": "tatu",
+      "English_translation": "three",
+      "duration_seconds": 4.32,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    },
+    {
+      "Word_id": "id_0plej5f4lbcg.wav",
+      "Swahili_word": "tisa",
+      "English_translation": "nine",
+      "duration_seconds": 4.4,
+      "selection_rule": "closest duration to class median; tie broken by Word_id",
+      "spectrogram_nfft": 512,
+      "spectrogram_noverlap": 256,
+      "spectrogram_db_floor": 1e-12,
+      "spectrogram_color_limits_db": "-119.865251,-83.192938"
+    }
+  ],
+  "figure_files": [
+    "class_distribution.png",
+    "audio_duration_distribution.png",
+    "sample_rate_distribution.png",
+    "example_waveforms.png",
+    "example_spectrograms.png"
+  ]
+}

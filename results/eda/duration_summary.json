@@ -1,0 +1,384 @@
+{
+  "percentile_interpolation": "linear",
+  "std": "sample standard deviation, ddof=1",
+  "thresholds_are_descriptive": true,
+  "clips_were_removed": false,
+  "scopes": {
+    "labeled_pool": {
+      "summary": {
+        "n": 4200,
+        "min": 2.48,
+        "max": 62.24,
+        "mean": 4.8165523809523805,
+        "median": 4.32,
+        "std_ddof1": 3.3635424684759507,
+        "p01": 2.8,
+        "p05": 3.2,
+        "p10": 3.36,
+        "p25": 3.84,
+        "p50": 4.32,
+        "p75": 5.04,
+        "p90": 6.16,
+        "p95": 7.299199999999983,
+        "p99": 11.844000000000086
+      },
+      "thresholds": [
+        {
+          "threshold_seconds": 5,
+          "n_clips": 1074,
+          "percentage": 25.571428571428573
+        },
+        {
+          "threshold_seconds": 6,
+          "n_clips": 471,
+          "percentage": 11.214285714285714
+        },
+        {
+          "threshold_seconds": 8,
+          "n_clips": 160,
+          "percentage": 3.8095238095238093
+        },
+        {
+          "threshold_seconds": 10,
+          "n_clips": 64,
+          "percentage": 1.5238095238095237
+        },
+        {
+          "threshold_seconds": 15,
+          "n_clips": 30,
+          "percentage": 0.7142857142857143
+        },
+        {
+          "threshold_seconds": 20,
+          "n_clips": 21,
+          "percentage": 0.5
+        },
+        {
+          "threshold_seconds": 30,
+          "n_clips": 13,
+          "percentage": 0.30952380952380953
+        },
+        {
+          "threshold_seconds": 60,
+          "n_clips": 9,
+          "percentage": 0.21428571428571427
+        }
+      ]
+    },
+    "shared_train_split": {
+      "summary": {
+        "n": 2940,
+        "min": 2.48,
+        "max": 62.24,
+        "mean": 4.759825850340136,
+        "median": 4.32,
+        "std_ddof1": 2.9858674895474224,
+        "p01": 2.8,
+        "p05": 3.12,
+        "p10": 3.36,
+        "p25": 3.84,
+        "p50": 4.32,
+        "p75": 5.04,
+        "p90": 6.16,
+        "p95": 7.28,
+        "p99": 10.88
+      },
+      "thresholds": [
+        {
+          "threshold_seconds": 5,
+          "n_clips": 766,
+          "percentage": 26.05442176870748
+        },
+        {
+          "threshold_seconds": 6,
+          "n_clips": 331,
+          "percentage": 11.258503401360544
+        },
+        {
+          "threshold_seconds": 8,
+          "n_clips": 104,
+          "percentage": 3.5374149659863945
+        },
+        {
+          "threshold_seconds": 10,
+          "n_clips": 37,
+          "percentage": 1.2585034013605443
+        },
+        {
+          "threshold_seconds": 15,
+          "n_clips": 16,
+          "percentage": 0.54421768707483
+        },
+        {
+          "threshold_seconds": 20,
+          "n_clips": 10,
+          "percentage": 0.3401360544217687
+        },
+        {
+          "threshold_seconds": 30,
+          "n_clips": 6,
+          "percentage": 0.20408163265306123
+        },
+        {
+          "threshold_seconds": 60,
+          "n_clips": 5,
+          "percentage": 0.17006802721088435
+        }
+      ]
+    }
+  },
+  "per_class_labeled_pool": [
+    {
+      "Swahili_word": "hapana",
+      "English_translation": "no",
+      "n": 350,
+      "duration_min": 2.64,
+      "duration_mean": 4.914285714285715,
+      "duration_median": 4.4,
+      "duration_max": 62.08,
+      "duration_std_ddof1": 3.383391667121584,
+      "n_ge_5s": 106,
+      "n_ge_6s": 46,
+      "n_ge_8s": 14,
+      "n_ge_10s": 6,
+      "n_ge_15s": 2,
+      "n_ge_20s": 1,
+      "n_ge_30s": 1,
+      "n_ge_60s": 1
+    },
+    {
+      "Swahili_word": "kumi",
+      "English_translation": "ten",
+      "n": 350,
+      "duration_min": 2.48,
+      "duration_mean": 4.840594285714285,
+      "duration_median": 4.28,
+      "duration_max": 62.208,
+      "duration_std_ddof1": 3.6285005437447286,
+      "n_ge_5s": 78,
+      "n_ge_6s": 44,
+      "n_ge_8s": 14,
+      "n_ge_10s": 8,
+      "n_ge_15s": 3,
+      "n_ge_20s": 2,
+      "n_ge_30s": 1,
+      "n_ge_60s": 1
+    },
+    {
+      "Swahili_word": "mbili",
+      "English_translation": "two",
+      "n": 350,
+      "duration_min": 2.72,
+      "duration_mean": 4.900937142857143,
+      "duration_median": 4.24,
+      "duration_max": 62.208,
+      "duration_std_ddof1": 4.1791443704890225,
+      "n_ge_5s": 83,
+      "n_ge_6s": 45,
+      "n_ge_8s": 16,
+      "n_ge_10s": 7,
+      "n_ge_15s": 3,
+      "n_ge_20s": 2,
+      "n_ge_30s": 2,
+      "n_ge_60s": 1
+    },
+    {
+      "Swahili_word": "moja",
+      "English_translation": "one",
+      "n": 350,
+      "duration_min": 2.64,
+      "duration_mean": 4.9199085714285715,
+      "duration_median": 4.24,
+      "duration_max": 62.08,
+      "duration_std_ddof1": 4.032627184455419,
+      "n_ge_5s": 91,
+      "n_ge_6s": 33,
+      "n_ge_8s": 15,
+      "n_ge_10s": 5,
+      "n_ge_15s": 4,
+      "n_ge_20s": 3,
+      "n_ge_30s": 2,
+      "n_ge_60s": 1
+    },
+    {
+      "Swahili_word": "nane",
+      "English_translation": "eight",
+      "n": 350,
+      "duration_min": 2.48,
+      "duration_mean": 5.005851428571429,
+      "duration_median": 4.352,
+      "duration_max": 62.24,
+      "duration_std_ddof1": 4.854250724695534,
+      "n_ge_5s": 95,
+      "n_ge_6s": 34,
+      "n_ge_8s": 11,
+      "n_ge_10s": 5,
+      "n_ge_15s": 3,
+      "n_ge_20s": 3,
+      "n_ge_30s": 3,
+      "n_ge_60s": 2
+    },
+    {
+      "Swahili_word": "ndio",
+      "English_translation": "yes",
+      "n": 350,
+      "duration_min": 2.56,
+      "duration_mean": 4.749165714285715,
+      "duration_median": 4.24,
+      "duration_max": 62.08,
+      "duration_std_ddof1": 3.4769924907142107,
+      "n_ge_5s": 86,
+      "n_ge_6s": 33,
+      "n_ge_8s": 11,
+      "n_ge_10s": 4,
+      "n_ge_15s": 3,
+      "n_ge_20s": 2,
+      "n_ge_30s": 1,
+      "n_ge_60s": 1
+    },
+    {
+      "Swahili_word": "nne",
+      "English_translation": "four",
+      "n": 350,
+      "duration_min": 2.64,
+      "duration_mean": 4.691611428571429,
+      "duration_median": 4.24,
+      "duration_max": 61.952,
+      "duration_std_ddof1": 3.3637603919800996,
+      "n_ge_5s": 83,
+      "n_ge_6s": 34,
+      "n_ge_8s": 10,
+      "n_ge_10s": 5,
+      "n_ge_15s": 1,
+      "n_ge_20s": 1,
+      "n_ge_30s": 1,
+      "n_ge_60s": 1
+    },
+    {
+      "Swahili_word": "saba",
+      "English_translation": "seven",
+      "n": 350,
+      "duration_min": 2.64,
+      "duration_mean": 4.667291428571429,
+      "duration_median": 4.32,
+      "duration_max": 29.312,
+      "duration_std_ddof1": 1.8291793330082602,
+      "n_ge_5s": 86,
+      "n_ge_6s": 36,
+      "n_ge_8s": 13,
+      "n_ge_10s": 2,
+      "n_ge_15s": 1,
+      "n_ge_20s": 1,
+      "n_ge_30s": 0,
+      "n_ge_60s": 0
+    },
+    {
+      "Swahili_word": "sita",
+      "English_translation": "six",
+      "n": 350,
+      "duration_min": 2.8,
+      "duration_mean": 4.856411428571429,
+      "duration_median": 4.32,
+      "duration_max": 62.08,
+      "duration_std_ddof1": 3.376589230733706,
+      "n_ge_5s": 95,
+      "n_ge_6s": 49,
+      "n_ge_8s": 16,
+      "n_ge_10s": 5,
+      "n_ge_15s": 1,
+      "n_ge_20s": 1,
+      "n_ge_30s": 1,
+      "n_ge_60s": 1
+    },
+    {
+      "Swahili_word": "tano",
+      "English_translation": "five",
+      "n": 350,
+      "duration_min": 2.72,
+      "duration_mean": 4.720045714285715,
+      "duration_median": 4.24,
+      "duration_max": 41.856,
+      "duration_std_ddof1": 2.722156973460953,
+      "n_ge_5s": 89,
+      "n_ge_6s": 40,
+      "n_ge_8s": 11,
+      "n_ge_10s": 4,
+      "n_ge_15s": 2,
+      "n_ge_20s": 2,
+      "n_ge_30s": 1,
+      "n_ge_60s": 0
+    },
+    {
+      "Swahili_word": "tatu",
+      "English_translation": "three",
+      "n": 350,
+      "duration_min": 2.56,
+      "duration_mean": 4.785325714285714,
+      "duration_median": 4.32,
+      "duration_max": 27.6,
+      "duration_std_ddof1": 2.2487597198367766,
+      "n_ge_5s": 88,
+      "n_ge_6s": 38,
+      "n_ge_8s": 15,
+      "n_ge_10s": 8,
+      "n_ge_15s": 5,
+      "n_ge_20s": 2,
+      "n_ge_30s": 0,
+      "n_ge_60s": 0
+    },
+    {
+      "Swahili_word": "tisa",
+      "English_translation": "nine",
+      "n": 350,
+      "duration_min": 2.8,
+      "duration_mean": 4.7472,
+      "duration_median": 4.4,
+      "duration_max": 25.36,
+      "duration_std_ddof1": 1.8631305570945287,
+      "n_ge_5s": 94,
+      "n_ge_6s": 39,
+      "n_ge_8s": 14,
+      "n_ge_10s": 5,
+      "n_ge_15s": 2,
+      "n_ge_20s": 1,
+      "n_ge_30s": 0,
+      "n_ge_60s": 0
+    }
+  ],
+  "long_tail_by_class": {
+    "at_least_10s": {
+      "n_clips": 64,
+      "counts_by_class": {
+        "hapana": 6,
+        "kumi": 8,
+        "mbili": 7,
+        "moja": 5,
+        "nane": 5,
+        "ndio": 4,
+        "nne": 5,
+        "saba": 2,
+        "sita": 5,
+        "tano": 4,
+        "tatu": 8,
+        "tisa": 5
+      },
+      "n_classes_represented": 12,
+      "max_class_count": 8
+    },
+    "at_least_60s": {
+      "n_clips": 9,
+      "counts_by_class": {
+        "hapana": 1,
+        "kumi": 1,
+        "mbili": 1,
+        "moja": 1,
+        "nane": 2,
+        "ndio": 1,
+        "nne": 1,
+        "sita": 1
+      },
+      "n_classes_represented": 8,
+      "max_class_count": 2
+    }
+  }
+}

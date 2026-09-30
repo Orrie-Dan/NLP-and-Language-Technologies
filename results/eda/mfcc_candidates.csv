@@ -1,0 +1,4 @@
+n_mfcc,n_mels,frame_length_samples,hop_length_samples,frame_length_ms,hop_length_ms,n_fft,window,mel_scale,fmin_hz,fmax_hz,pre_emphasis,log_floor,dct,median_frames_per_labeled_clip,max_frames_per_labeled_clip,median_sequence_feature_values,float32_megabytes_all_labeled_sequences_at_median_length,float32_megabytes_all_labeled_sequences_at_max_length,float32_megabytes_mean_pool,float32_megabytes_mean_and_std_pool,delta_and_delta_delta_multiply_feature_axis_by
+13,40,400,160,25.0,10.0,512,hann,HTK,0.0,8000.0,0.0,1e-10,"orthonormal DCT-II, c0 retained, no lifter",430.0,6222,5590.0,93.912,1358.8848,0.2184,0.4368,3
+20,40,400,160,25.0,10.0,512,hann,HTK,0.0,8000.0,0.0,1e-10,"orthonormal DCT-II, c0 retained, no lifter",430.0,6222,8600.0,144.48,2090.592,0.336,0.672,3
+40,40,400,160,25.0,10.0,512,hann,HTK,0.0,8000.0,0.0,1e-10,"orthonormal DCT-II, c0 retained, no lifter",430.0,6222,17200.0,288.96,4181.184,0.672,1.344,3

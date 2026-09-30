@@ -1,0 +1,227 @@
+{
+  "n_labeled_examples": 4200,
+  "n_classes": 12,
+  "examples_per_class": {
+    "hapana": 350,
+    "kumi": 350,
+    "mbili": 350,
+    "moja": 350,
+    "nane": 350,
+    "ndio": 350,
+    "nne": 350,
+    "saba": 350,
+    "sita": 350,
+    "tano": 350,
+    "tatu": 350,
+    "tisa": 350
+  },
+  "labeled_min_class_count": 350,
+  "labeled_max_class_count": 350,
+  "labeled_counts_are_equal": true,
+  "imbalance_ratio_max_over_min": 1.0,
+  "split_ranges": {
+    "test": {
+      "n_clips": 630,
+      "min_class_count": 52,
+      "max_class_count": 53,
+      "n_classes": 12
+    },
+    "train": {
+      "n_clips": 2940,
+      "min_class_count": 245,
+      "max_class_count": 245,
+      "n_classes": 12
+    },
+    "validation": {
+      "n_clips": 630,
+      "min_class_count": 52,
+      "max_class_count": 53,
+      "n_classes": 12
+    }
+  },
+  "class_counts_by_split": [
+    {
+      "split": "test",
+      "Swahili_word": "hapana",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "kumi",
+      "n": 53
+    },
+    {
+      "split": "test",
+      "Swahili_word": "mbili",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "moja",
+      "n": 53
+    },
+    {
+      "split": "test",
+      "Swahili_word": "nane",
+      "n": 53
+    },
+    {
+      "split": "test",
+      "Swahili_word": "ndio",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "nne",
+      "n": 53
+    },
+    {
+      "split": "test",
+      "Swahili_word": "saba",
+      "n": 53
+    },
+    {
+      "split": "test",
+      "Swahili_word": "sita",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "tano",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "tatu",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "tisa",
+      "n": 53
+    },
+    {
+      "split": "train",
+      "Swahili_word": "hapana",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "kumi",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "mbili",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "moja",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "nane",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "ndio",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "nne",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "saba",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "sita",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "tano",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "tatu",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "tisa",
+      "n": 245
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "hapana",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "kumi",
+      "n": 52
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "mbili",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "moja",
+      "n": 52
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "nane",
+      "n": 52
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "ndio",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "nne",
+      "n": 52
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "saba",
+      "n": 52
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "sita",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "tano",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "tatu",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "tisa",
+      "n": 52
+    }
+  ],
+  "class_weighting_justified_by_label_counts": false,
+  "oversampling_justified_by_label_counts": false,
+  "reason": "Every labeled class has the same count, so class weighting or oversampling is not justified by the label distribution. Validation and internal-test counts differ by at most one clip per class because 15 percent of 350 is not an integer. That is a split-rounding effect, not a class-imbalance problem."
+}

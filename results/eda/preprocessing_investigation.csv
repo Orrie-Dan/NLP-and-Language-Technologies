@@ -1,0 +1,12 @@
+topic,status,evidence,statement
+sample_rate,SUPPORTED,Sample-rate counts: {'16000': 4200}.,Do not resample merely to reconcile labeled clips with each other; all read labeled clips are 16000 Hz.
+mono_stereo,SUPPORTED,Channel counts: {'1': 4200}.,No downmix is required to reconcile labeled clips. All read labeled clips are mono.
+class_imbalance_handling,SUPPORTED,"Every labeled class has the same count, so class weighting or oversampling is not justified by the label distribution. Validation and internal-test counts differ by at most one clip per class because 15 percent of 350 is not an integer. That is a split-rounding effect, not a class-imbalance problem.",Do not use class weighting or oversampling because of label frequency.
+amplitude_normalization,TO DECIDE IN PHASE 4,150 labeled clips reach a peak absolute amplitude of at least 32767. RMS varies across clips in the Phase 2 metadata. No normalization was fit.,Peak or RMS scaling was not chosen.
+silence_or_low_energy_trimming,TO DECIDE IN PHASE 4,A 25 ms frame stepping every 10 ms is low-energy when its RMS is strictly below 1 percent of that clip's maximum frame RMS. This is not a silence measurement.,"Low-energy proportions were measured. They were not shown to be silence, and no trim was applied."
+duration_window,TO DECIDE IN PHASE 4,"Round windows 4, 5, 6, and 8 seconds, plus training-split percentile windows, are in fixed_window_impact.csv.",No fixed duration was selected.
+padding,TO DECIDE IN PHASE 4,Shorter-than-window percentages are recorded. Padding values were not tested.,Padding location and fill value are open.
+truncation,TO DECIDE IN PHASE 4,Longer-than-window percentages and retained-duration percentages are recorded. No clip was cut.,"Whether to cut the start, the end, or another region is open."
+mfcc_configuration,TO DECIDE IN PHASE 4,"Candidate settings are 13, 20, and 40 coefficients with a 25 ms window, 10 ms hop, 40 HTK-mel bands, and FFT length 512.",No MFCC configuration was adopted.
+delta_and_delta_delta,TO DECIDE IN PHASE 4,Delta features were computed for one clip and are feasible. They were not compared in a classifier.,Deltas were not adopted.
+feature_aggregation,TO DECIDE IN PHASE 4,Sequence storage at the median length is much larger than mean pooling. Accuracy was not measured.,"Mean pooling, mean and standard deviation, or a fixed-length sequence were not chosen."

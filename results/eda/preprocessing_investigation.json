@@ -1,0 +1,72 @@
+{
+  "phase": 3,
+  "decisions": [
+    {
+      "topic": "sample_rate",
+      "status": "SUPPORTED",
+      "evidence": "Sample-rate counts: {'16000': 4200}.",
+      "statement": "Do not resample merely to reconcile labeled clips with each other; all read labeled clips are 16000 Hz."
+    },
+    {
+      "topic": "mono_stereo",
+      "status": "SUPPORTED",
+      "evidence": "Channel counts: {'1': 4200}.",
+      "statement": "No downmix is required to reconcile labeled clips. All read labeled clips are mono."
+    },
+    {
+      "topic": "class_imbalance_handling",
+      "status": "SUPPORTED",
+      "evidence": "Every labeled class has the same count, so class weighting or oversampling is not justified by the label distribution. Validation and internal-test counts differ by at most one clip per class because 15 percent of 350 is not an integer. That is a split-rounding effect, not a class-imbalance problem.",
+      "statement": "Do not use class weighting or oversampling because of label frequency."
+    },
+    {
+      "topic": "amplitude_normalization",
+      "status": "TO DECIDE IN PHASE 4",
+      "evidence": "150 labeled clips reach a peak absolute amplitude of at least 32767. RMS varies across clips in the Phase 2 metadata. No normalization was fit.",
+      "statement": "Peak or RMS scaling was not chosen."
+    },
+    {
+      "topic": "silence_or_low_energy_trimming",
+      "status": "TO DECIDE IN PHASE 4",
+      "evidence": "A 25 ms frame stepping every 10 ms is low-energy when its RMS is strictly below 1 percent of that clip's maximum frame RMS. This is not a silence measurement.",
+      "statement": "Low-energy proportions were measured. They were not shown to be silence, and no trim was applied."
+    },
+    {
+      "topic": "duration_window",
+      "status": "TO DECIDE IN PHASE 4",
+      "evidence": "Round windows 4, 5, 6, and 8 seconds, plus training-split percentile windows, are in fixed_window_impact.csv.",
+      "statement": "No fixed duration was selected."
+    },
+    {
+      "topic": "padding",
+      "status": "TO DECIDE IN PHASE 4",
+      "evidence": "Shorter-than-window percentages are recorded. Padding values were not tested.",
+      "statement": "Padding location and fill value are open."
+    },
+    {
+      "topic": "truncation",
+      "status": "TO DECIDE IN PHASE 4",
+      "evidence": "Longer-than-window percentages and retained-duration percentages are recorded. No clip was cut.",
+      "statement": "Whether to cut the start, the end, or another region is open."
+    },
+    {
+      "topic": "mfcc_configuration",
+      "status": "TO DECIDE IN PHASE 4",
+      "evidence": "Candidate settings are 13, 20, and 40 coefficients with a 25 ms window, 10 ms hop, 40 HTK-mel bands, and FFT length 512.",
+      "statement": "No MFCC configuration was adopted."
+    },
+    {
+      "topic": "delta_and_delta_delta",
+      "status": "TO DECIDE IN PHASE 4",
+      "evidence": "Delta features were computed for one clip and are feasible. They were not compared in a classifier.",
+      "statement": "Deltas were not adopted."
+    },
+    {
+      "topic": "feature_aggregation",
+      "status": "TO DECIDE IN PHASE 4",
+      "evidence": "Sequence storage at the median length is much larger than mean pooling. Accuracy was not measured.",
+      "statement": "Mean pooling, mean and standard deviation, or a fixed-length sequence were not chosen."
+    }
+  ],
+  "shared_split_rewritten": false
+}

@@ -1,0 +1,218 @@
+{
+  "n_rows": 4200,
+  "duplicate_word_ids": 0,
+  "n_assigned": 4200,
+  "n_labeled": 4200,
+  "missing_labeled_ids": 0,
+  "unknown_ids": 0,
+  "official_test_ids_in_split": 0,
+  "split_counts": {
+    "train": 2940,
+    "test": 630,
+    "validation": 630
+  },
+  "allowed_split_names": [
+    "test",
+    "train",
+    "validation"
+  ],
+  "random_seed": 42,
+  "fractions": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "method": "sklearn.model_selection.train_test_split on Train.csv only; hold out 0.3 stratified on Swahili_word with random_state 42; split that holdout in half with the same seed and stratify column.",
+  "packages": {
+    "numpy": "2.2.5",
+    "pandas": "2.3.0",
+    "sklearn": "1.8.0",
+    "matplotlib": "3.10.3",
+    "seaborn": "0.13.2"
+  },
+  "python_version": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "class_counts": [
+    {
+      "split": "test",
+      "Swahili_word": "hapana",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "kumi",
+      "n": 53
+    },
+    {
+      "split": "test",
+      "Swahili_word": "mbili",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "moja",
+      "n": 53
+    },
+    {
+      "split": "test",
+      "Swahili_word": "nane",
+      "n": 53
+    },
+    {
+      "split": "test",
+      "Swahili_word": "ndio",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "nne",
+      "n": 53
+    },
+    {
+      "split": "test",
+      "Swahili_word": "saba",
+      "n": 53
+    },
+    {
+      "split": "test",
+      "Swahili_word": "sita",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "tano",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "tatu",
+      "n": 52
+    },
+    {
+      "split": "test",
+      "Swahili_word": "tisa",
+      "n": 53
+    },
+    {
+      "split": "train",
+      "Swahili_word": "hapana",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "kumi",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "mbili",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "moja",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "nane",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "ndio",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "nne",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "saba",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "sita",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "tano",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "tatu",
+      "n": 245
+    },
+    {
+      "split": "train",
+      "Swahili_word": "tisa",
+      "n": 245
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "hapana",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "kumi",
+      "n": 52
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "mbili",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "moja",
+      "n": 52
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "nane",
+      "n": 52
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "ndio",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "nne",
+      "n": 52
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "saba",
+      "n": 52
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "sita",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "tano",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "tatu",
+      "n": 53
+    },
+    {
+      "split": "validation",
+      "Swahili_word": "tisa",
+      "n": 52
+    }
+  ],
+  "official_test_used_for_split": false,
+  "internal_test_reserved_for_final_evaluation": true
+}

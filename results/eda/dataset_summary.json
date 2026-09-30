@@ -1,0 +1,222 @@
+{
+  "train": {
+    "n_rows": 4200,
+    "n_columns": 3,
+    "columns": [
+      "Word_id",
+      "Swahili_word",
+      "English_translation"
+    ],
+    "dtypes": {
+      "Word_id": "object",
+      "Swahili_word": "object",
+      "English_translation": "object"
+    },
+    "missing_values": {
+      "Word_id": 0,
+      "Swahili_word": 0,
+      "English_translation": 0
+    },
+    "duplicate_word_ids": 0,
+    "duplicate_complete_rows": 0,
+    "n_classes": 12,
+    "class_labels": [
+      "hapana",
+      "kumi",
+      "mbili",
+      "moja",
+      "nane",
+      "ndio",
+      "nne",
+      "saba",
+      "sita",
+      "tano",
+      "tatu",
+      "tisa"
+    ],
+    "class_counts": {
+      "hapana": 350,
+      "kumi": 350,
+      "mbili": 350,
+      "moja": 350,
+      "nane": 350,
+      "ndio": 350,
+      "nne": 350,
+      "saba": 350,
+      "sita": 350,
+      "tano": 350,
+      "tatu": 350,
+      "tisa": 350
+    },
+    "classes_have_equal_counts": true,
+    "translations": {
+      "pairs": [
+        {
+          "Swahili_word": "hapana",
+          "English_translation": "no",
+          "n": 350
+        },
+        {
+          "Swahili_word": "kumi",
+          "English_translation": "ten",
+          "n": 350
+        },
+        {
+          "Swahili_word": "mbili",
+          "English_translation": "two",
+          "n": 350
+        },
+        {
+          "Swahili_word": "moja",
+          "English_translation": "one",
+          "n": 350
+        },
+        {
+          "Swahili_word": "nane",
+          "English_translation": "eight",
+          "n": 350
+        },
+        {
+          "Swahili_word": "ndio",
+          "English_translation": "yes",
+          "n": 350
+        },
+        {
+          "Swahili_word": "nne",
+          "English_translation": "four",
+          "n": 350
+        },
+        {
+          "Swahili_word": "saba",
+          "English_translation": "seven",
+          "n": 350
+        },
+        {
+          "Swahili_word": "sita",
+          "English_translation": "six",
+          "n": 350
+        },
+        {
+          "Swahili_word": "tano",
+          "English_translation": "five",
+          "n": 350
+        },
+        {
+          "Swahili_word": "tatu",
+          "English_translation": "three",
+          "n": 350
+        },
+        {
+          "Swahili_word": "tisa",
+          "English_translation": "nine",
+          "n": 350
+        }
+      ],
+      "max_english_per_swahili": 1,
+      "max_swahili_per_english": 1,
+      "consistent_within_each_swahili_label": true,
+      "consistent_within_each_english_label": true
+    }
+  },
+  "test": {
+    "n_rows": 1800,
+    "n_columns": 1,
+    "columns": [
+      "Word_id"
+    ],
+    "dtypes": {
+      "Word_id": "object"
+    },
+    "missing_values": {
+      "Word_id": 0
+    },
+    "duplicate_word_ids": 0,
+    "overlap_with_train_ids": 0
+  },
+  "sample_submission": {
+    "n_rows": 1800,
+    "n_columns": 13,
+    "columns": [
+      "Word_id",
+      "hapana",
+      "kumi",
+      "mbili",
+      "moja",
+      "nane",
+      "ndio",
+      "nne",
+      "saba",
+      "sita",
+      "tano",
+      "tatu",
+      "tisa"
+    ],
+    "dtypes": {
+      "Word_id": "object",
+      "hapana": "int64",
+      "kumi": "int64",
+      "mbili": "int64",
+      "moja": "int64",
+      "nane": "int64",
+      "ndio": "int64",
+      "nne": "int64",
+      "saba": "int64",
+      "sita": "int64",
+      "tano": "int64",
+      "tatu": "int64",
+      "tisa": "int64"
+    },
+    "ids_match_test_set": true,
+    "ids_in_same_order_as_test": true,
+    "n_class_columns": 12,
+    "class_columns": [
+      "hapana",
+      "kumi",
+      "mbili",
+      "moja",
+      "nane",
+      "ndio",
+      "nne",
+      "saba",
+      "sita",
+      "tano",
+      "tatu",
+      "tisa"
+    ],
+    "class_columns_match_train_labels": true,
+    "all_class_entries_are_zero": true
+  },
+  "audio_zip": {
+    "path_name": "Swahili_words.zip",
+    "compressed_file_size_bytes": 530658415,
+    "member_compressed_size_bytes": 529974393,
+    "member_uncompressed_size_bytes": 924559680,
+    "n_members": 6000,
+    "extensions": {
+      ".wav": 6000
+    },
+    "n_members_matching_id_pattern": 6000,
+    "filename_token_length_counts": {
+      "12": 6000
+    },
+    "train_ids_missing_from_zip": 0,
+    "test_ids_missing_from_zip": 0,
+    "zip_members_not_in_train_or_test": 0
+  },
+  "speaker": {
+    "train_columns": [
+      "Word_id",
+      "Swahili_word",
+      "English_translation"
+    ],
+    "test_columns": [
+      "Word_id"
+    ],
+    "speaker_like_columns": [],
+    "zip_members_in_subdirectories": 0,
+    "starter_notebook_path": "Swahili_Audio_StarterNotebook.ipynb",
+    "starter_notebook_term_hits": [],
+    "speaker_identifier_present": false,
+    "note": "No speaker identifier was found in the CSV columns, zip paths, or starter notebook. Filenames were not treated as speaker ids."
+  }
+}

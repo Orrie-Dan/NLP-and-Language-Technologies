@@ -1,0 +1,178 @@
+{
+  "rule": {
+    "frame_length_ms": 25.0,
+    "hop_length_ms": 10.0,
+    "low_energy_frame_fraction_of_max_frame_rms": 0.01,
+    "definition": "A 25 ms frame stepping every 10 ms is low-energy when its RMS is strictly below 1 percent of that clip's maximum frame RMS. This is not a silence measurement.",
+    "sample_level_rule_from_phase2": "The Phase 2 column low_energy_proportion is the fraction of samples whose absolute amplitude is strictly below 1 percent of that clip's peak absolute amplitude. It is also not a silence percentage."
+  },
+  "labeled_pool": {
+    "leading_low_energy_seconds": {
+      "n": 4200,
+      "min": 0.0,
+      "median": 0.21,
+      "mean": 0.5993309523809522,
+      "p95": 1.97,
+      "max": 7.01
+    },
+    "trailing_low_energy_seconds": {
+      "n": 4200,
+      "min": 0.0,
+      "median": 0.10500000000000001,
+      "mean": 0.6603857142857142,
+      "p95": 2.24,
+      "max": 39.19
+    },
+    "low_energy_frame_proportion": {
+      "n": 4200,
+      "min": 0.0,
+      "median": 0.6202652900055573,
+      "mean": 0.5108748551273578,
+      "p95": 0.887707143002379,
+      "max": 0.9825525812619503
+    },
+    "sample_low_energy_proportion": {
+      "n": 4200,
+      "min": 0.0696455792682926,
+      "median": 0.8483116119311347,
+      "mean": 0.7699804993636837,
+      "p95": 0.9232884018539252,
+      "max": 0.9853426032110092
+    },
+    "n_all_frames_low_energy": 0
+  },
+  "by_duration_bin": [
+    {
+      "duration_bin": "under_5s",
+      "n": 3126,
+      "median_leading_low_energy_seconds": 0.21,
+      "median_trailing_low_energy_seconds": 0.12,
+      "median_low_energy_frame_proportion": 0.6268156614620539
+    },
+    {
+      "duration_bin": "5_to_8s",
+      "n": 914,
+      "median_leading_low_energy_seconds": 0.235,
+      "median_trailing_low_energy_seconds": 0.09,
+      "median_low_energy_frame_proportion": 0.6023111906359502
+    },
+    {
+      "duration_bin": "8_to_10s",
+      "n": 96,
+      "median_leading_low_energy_seconds": 0.195,
+      "median_trailing_low_energy_seconds": 0.1,
+      "median_low_energy_frame_proportion": 0.6016116657279327
+    },
+    {
+      "duration_bin": "at_least_10s",
+      "n": 64,
+      "median_leading_low_energy_seconds": 0.175,
+      "median_trailing_low_energy_seconds": 0.125,
+      "median_low_energy_frame_proportion": 0.7945167718213906
+    }
+  ],
+  "by_class": [
+    {
+      "Swahili_word": "hapana",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.18,
+      "median_trailing_low_energy_seconds": 0.12,
+      "median_low_energy_frame_proportion": 0.6007186120521507,
+      "median_sample_low_energy_proportion": 0.8397908066258286
+    },
+    {
+      "Swahili_word": "kumi",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.275,
+      "median_trailing_low_energy_seconds": 0.20500000000000002,
+      "median_low_energy_frame_proportion": 0.6982843137254902,
+      "median_sample_low_energy_proportion": 0.8516372400774826
+    },
+    {
+      "Swahili_word": "mbili",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.19,
+      "median_trailing_low_energy_seconds": 0.08,
+      "median_low_energy_frame_proportion": 0.6161593073593074,
+      "median_sample_low_energy_proportion": 0.8258456465126811
+    },
+    {
+      "Swahili_word": "moja",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.21,
+      "median_trailing_low_energy_seconds": 0.08,
+      "median_low_energy_frame_proportion": 0.5996295081070735,
+      "median_sample_low_energy_proportion": 0.8401435622914349
+    },
+    {
+      "Swahili_word": "nane",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.19,
+      "median_trailing_low_energy_seconds": 0.06,
+      "median_low_energy_frame_proportion": 0.5601932367149759,
+      "median_sample_low_energy_proportion": 0.8390044651045487
+    },
+    {
+      "Swahili_word": "ndio",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.2,
+      "median_trailing_low_energy_seconds": 0.11,
+      "median_low_energy_frame_proportion": 0.585490870384017,
+      "median_sample_low_energy_proportion": 0.8241061350334449
+    },
+    {
+      "Swahili_word": "nne",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.225,
+      "median_trailing_low_energy_seconds": 0.09,
+      "median_low_energy_frame_proportion": 0.6222024284865983,
+      "median_sample_low_energy_proportion": 0.8514328587761324
+    },
+    {
+      "Swahili_word": "saba",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.225,
+      "median_trailing_low_energy_seconds": 0.21,
+      "median_low_energy_frame_proportion": 0.6405898540320651,
+      "median_sample_low_energy_proportion": 0.8520832202561877
+    },
+    {
+      "Swahili_word": "sita",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.24,
+      "median_trailing_low_energy_seconds": 0.05,
+      "median_low_energy_frame_proportion": 0.5620637615544237,
+      "median_sample_low_energy_proportion": 0.8452995749080883
+    },
+    {
+      "Swahili_word": "tano",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.22,
+      "median_trailing_low_energy_seconds": 0.165,
+      "median_low_energy_frame_proportion": 0.6589219958785176,
+      "median_sample_low_energy_proportion": 0.8652572115384616
+    },
+    {
+      "Swahili_word": "tatu",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.2,
+      "median_trailing_low_energy_seconds": 0.185,
+      "median_low_energy_frame_proportion": 0.6627906976744186,
+      "median_sample_low_energy_proportion": 0.8847250512007452
+    },
+    {
+      "Swahili_word": "tisa",
+      "n": 350,
+      "median_leading_low_energy_seconds": 0.24,
+      "median_trailing_low_energy_seconds": 0.04,
+      "median_low_energy_frame_proportion": 0.6331512818217089,
+      "median_sample_low_energy_proportion": 0.8551270232199253
+    }
+  ],
+  "pcm_sha256": {
+    "n_clips": 4200,
+    "n_unique_hashes": 4200,
+    "n_duplicate_groups": 0,
+    "duplicate_group_sizes": []
+  }
+}

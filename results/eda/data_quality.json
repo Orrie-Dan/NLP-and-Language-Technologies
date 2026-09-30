@@ -1,0 +1,98 @@
+{
+  "n_labeled_clips": 4200,
+  "unreadable_files_recorded_in_temporal_pass": 0,
+  "zero_length_clips": 0,
+  "sample_rate_counts": {
+    "16000": 4200
+  },
+  "channel_counts": {
+    "1": 4200
+  },
+  "sample_width_bytes_counts": {
+    "2": 4200
+  },
+  "compression_counts": {
+    "NONE": 4200
+  },
+  "reread_sample_rate_mismatch": 0,
+  "reread_length_mismatch": 0,
+  "n_full_scale_peak_at_least_32767": 150,
+  "duplicate_labeled_ids_in_metadata": 0,
+  "official_test_ids_in_split": 0,
+  "shortest_five": [
+    {
+      "Word_id": "id_54acpxzvh5dm.wav",
+      "Swahili_word": "kumi",
+      "duration_seconds": 2.48,
+      "peak_abs_amplitude": 2199.0,
+      "rms_amplitude": 433.9343245343385
+    },
+    {
+      "Word_id": "id_mk7gl5456k76.wav",
+      "Swahili_word": "nane",
+      "duration_seconds": 2.48,
+      "peak_abs_amplitude": 4695.0,
+      "rms_amplitude": 549.2095204278864
+    },
+    {
+      "Word_id": "id_injlouhxg1hg.wav",
+      "Swahili_word": "ndio",
+      "duration_seconds": 2.56,
+      "peak_abs_amplitude": 4086.0,
+      "rms_amplitude": 644.863207507208
+    },
+    {
+      "Word_id": "id_v15kmy54n2d2.wav",
+      "Swahili_word": "tatu",
+      "duration_seconds": 2.56,
+      "peak_abs_amplitude": 2808.0,
+      "rms_amplitude": 429.4240412200211
+    },
+    {
+      "Word_id": "id_f44ovneaoaqi.wav",
+      "Swahili_word": "moja",
+      "duration_seconds": 2.64,
+      "peak_abs_amplitude": 2852.0,
+      "rms_amplitude": 507.8119684845704
+    }
+  ],
+  "longest_five": [
+    {
+      "Word_id": "id_yt42jv5i5xcd.wav",
+      "Swahili_word": "nane",
+      "duration_seconds": 62.24,
+      "peak_abs_amplitude": 32768.0,
+      "rms_amplitude": 1391.9541411390326
+    },
+    {
+      "Word_id": "id_7rs86tc1t0mh.wav",
+      "Swahili_word": "mbili",
+      "duration_seconds": 62.208,
+      "peak_abs_amplitude": 1972.0,
+      "rms_amplitude": 67.45946375160705
+    },
+    {
+      "Word_id": "id_qconko34be1q.wav",
+      "Swahili_word": "kumi",
+      "duration_seconds": 62.208,
+      "peak_abs_amplitude": 965.0,
+      "rms_amplitude": 43.66842714254744
+    },
+    {
+      "Word_id": "id_e8ul9vf9y9p9.wav",
+      "Swahili_word": "sita",
+      "duration_seconds": 62.08,
+      "peak_abs_amplitude": 1755.0,
+      "rms_amplitude": 57.61618696165167
+    },
+    {
+      "Word_id": "id_12kj458pm4wm.wav",
+      "Swahili_word": "moja",
+      "duration_seconds": 62.08,
+      "peak_abs_amplitude": 3910.0,
+      "rms_amplitude": 56.50786072339095
+    }
+  ],
+  "pairwise_audio_similarity": "Not run. Exact PCM SHA-256 detects identical payloads only. Near-duplicates, time shifts, and gain changes were not compared.",
+  "n_duplicate_pcm_hash_groups": 0
+}
