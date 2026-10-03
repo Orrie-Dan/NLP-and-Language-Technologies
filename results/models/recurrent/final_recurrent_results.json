@@ -1,0 +1,59 @@
+{
+  "model": "recurrent",
+  "selected_run": "dropout_0.5",
+  "seed": 42,
+  "config": {
+    "name": "dropout_0.5",
+    "cell": "gru",
+    "bidirectional": true,
+    "hidden_size": 256,
+    "num_layers": 2,
+    "dropout": 0.5,
+    "pooling": "mean",
+    "feature_streams": 3,
+    "frame_stack": 3,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 60,
+    "patience": 10,
+    "grad_clip": 1.0
+  },
+  "front_end": {
+    "target_sample_rate": 16000,
+    "channel_mode": "require_mono",
+    "duration_seconds": 8.0,
+    "duration_mode": "fixed",
+    "padding_mode": "end",
+    "truncation_mode": "start",
+    "n_mfcc": 13,
+    "n_mels": 40,
+    "n_fft": 512,
+    "hop_length": 160,
+    "window_length": 400,
+    "include_delta": false,
+    "include_delta_delta": false,
+    "aggregation": "mean_std",
+    "normalize_amplitude": false,
+    "random_seed": 42
+  },
+  "best_epoch": 26,
+  "n_parameters": 1764876,
+  "validation": {
+    "accuracy": 0.973015873015873,
+    "macro_f1": 0.9731832618837539,
+    "weighted_f1": 0.9731267830923918,
+    "macro_precision": 0.9737981063105924,
+    "macro_recall": 0.9730285437832609,
+    "macro_roc_auc": 0.9971760750028728
+  },
+  "test": {
+    "accuracy": 0.9587301587301588,
+    "macro_f1": 0.9587373510760221,
+    "weighted_f1": 0.9586929338679692,
+    "macro_precision": 0.9594701281368558,
+    "macro_recall": 0.9587868892114174,
+    "macro_roc_auc": 0.9976335544653763
+  },
+  "test_usage": "The internal test split was evaluated only after the configuration was locked on validation."
+}
