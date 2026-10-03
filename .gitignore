@@ -81,3 +81,8 @@ data/interim/*
 !data/interim/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
+
+# Person 2 recurrent model: MFCC sequence cache and smoke-test output
+results/models/recurrent/cache/
+results/models/recurrent_smoke/
+results/figures/recurrent_smoke/

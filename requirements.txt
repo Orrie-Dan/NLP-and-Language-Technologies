@@ -6,3 +6,4 @@ seaborn
 jupyter
 notebook
 ipykernel
+torch
