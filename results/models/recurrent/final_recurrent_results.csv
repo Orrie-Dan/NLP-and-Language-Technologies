@@ -1,0 +1,2 @@
+model,selected_run,accuracy,macro_f1,weighted_f1,macro_precision,macro_recall,macro_roc_auc
+recurrent,dropout_0.5,0.9587301587301588,0.9587373510760221,0.9586929338679692,0.9594701281368558,0.9587868892114174,0.9976335544653763

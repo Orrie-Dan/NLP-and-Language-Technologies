@@ -1,0 +1,21 @@
+{
+  "selected": {
+    "name": "dropout_0.5",
+    "cell": "gru",
+    "bidirectional": true,
+    "hidden_size": 256,
+    "num_layers": 2,
+    "dropout": 0.5,
+    "pooling": "mean",
+    "feature_streams": 3,
+    "frame_stack": 3,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 60,
+    "patience": 10,
+    "grad_clip": 1.0
+  },
+  "selection_rule": "Greedy one-factor-at-a-time search; keep the highest validation macro-F1.",
+  "selected_val_macro_f1": 0.9731832618837539
+}
