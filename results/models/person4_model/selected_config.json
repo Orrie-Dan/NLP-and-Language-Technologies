@@ -1,0 +1,40 @@
+{
+  "selected": {
+    "name": "deeper_3_layers",
+    "d_model": 128,
+    "nhead": 4,
+    "num_layers": 3,
+    "dim_feedforward": 256,
+    "dropout": 0.2,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 30,
+    "patience": 8,
+    "grad_clip": 1.0
+  },
+  "front_end": {
+    "target_sample_rate": 16000,
+    "channel_mode": "require_mono",
+    "duration_seconds": 8.0,
+    "duration_mode": "fixed",
+    "padding_mode": "end",
+    "truncation_mode": "start",
+    "n_mfcc": 13,
+    "n_mels": 40,
+    "n_fft": 512,
+    "hop_length": 160,
+    "window_length": 400,
+    "include_delta": false,
+    "include_delta_delta": false,
+    "aggregation": "mean_std",
+    "normalize_amplitude": false,
+    "random_seed": 42
+  },
+  "feature_streams": 3,
+  "frame_stack": 3,
+  "n_features": 117,
+  "selection_rule": "Highest validation macro-F1 among the four validation experiments.",
+  "selected_val_macro_f1": 0.9586543005346827,
+  "best_epoch": 20
+}

@@ -1,0 +1,27 @@
+{
+  "python_version": "3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "random_seed": 42,
+  "split_fractions": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "sklearn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2"
+  },
+  "torch": "2.14.1",
+  "device": "mps",
+  "gpu": null,
+  "platform": "macOS-15.5-arm64-arm-64bit-Mach-O",
+  "train_seconds_per_experiment": {
+    "transformer_baseline": 113.3,
+    "smaller_d_model_64": 84.2,
+    "deeper_3_layers": 145.4,
+    "dropout_0.4": 91.9
+  },
+  "total_train_minutes": 7.2
+}

@@ -1,0 +1,2 @@
+model,selected_run,accuracy,macro_f1,weighted_f1,macro_precision,macro_recall,macro_roc_auc
+transformer,deeper_3_layers,0.9285714285714286,0.9285049447878247,0.9285906947962974,0.9294511950946931,0.9284591194968552,0.9968983864797801
