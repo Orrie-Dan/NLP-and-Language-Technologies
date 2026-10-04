@@ -1,154 +1,156 @@
-# Research-Informed Sequential Models for NLP and Language Technologies
+# Research-Informed Sequential Models for Swahili Spoken-Word Classification
 
-Formative Assignment 2. The challenge files are the Zindi Weekendz Swahili audio set supplied by the group. This README describes the shared project structure, what those files contain, and the experimental rules. It does not report model results. Counts below were read from the copied CSV and zip files. They are not modelling results.
+Formative Assignment 2 (NLP and Language Technologies). We compare five substantially different approaches for recognising 12 isolated Swahili spoken words from the Zindi Swahili Audio Classification dataset. Two are classical baselines and three are neural sequence models.
 
-## Project objective
+**Research question:** *How effectively can sequential modelling approaches recognise isolated Swahili spoken words, and what evidence supports the strengths and limitations of each approach?*
 
-This project investigates how different sequential modelling approaches perform on an approved NLP or language-technology challenge. The work emphasises:
+## Results at a glance
 
-- sequential characteristics of the data
-- justification of model selection
-- an empirical comparison of substantially different approaches
-- strengths and limitations of each approach
-- error analysis
+All models use the same shared split and are scored once on the same internal test split (630 clips) after their configuration was locked on validation. Every number below is read from a saved results file in this repository.
 
-The comparison will cover five approaches, including at least three neural sequential architectures. Those five approaches are not chosen yet. Classical baselines will use an audio representation that has not been chosen. No model has been trained.
+| Approach | Type | Test accuracy | Test macro-F1 | Macro ROC-AUC | Parameters | Results |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| Logistic Regression | Classical baseline | 0.381 | 0.380 | – | 78-D input | `results/classical/` |
+| Linear SVM | Classical baseline | 0.395 | 0.386 | – | 78-D input | `results/classical/` |
+| Temporal CNN | Neural sequence model | 0.821 | 0.820 | 0.975 | 25,548 | `results/person3_cnn_60epochs/` |
+| Transformer encoder | Neural sequence model | 0.929 | 0.929 | 0.997 | 414,092 | `results/models/person4_model/` |
+| **Bidirectional GRU** | Neural sequence model | **0.959** | **0.959** | **0.998** | 1,764,876 | `results/models/recurrent/` |
+
+The BiGRU was also retrained with seeds 42, 43 and 44, which gave a test macro-F1 of 0.955 ± 0.006 (`results/models/recurrent/seed_robustness.csv`). The other rows are single-seed results.
+
+The classical baselines summarise each clip as the mean and standard deviation of its MFCC frames, which discards the order of the sounds. All three neural models read the frames in order. That difference, roughly 0.39 against 0.82–0.96 macro-F1, is the main finding the report discusses.
 
 ## Dataset
 
-Source files, copied unchanged into `data/raw/`:
+Zindi Weekendz Swahili audio: 4,200 labelled 16 kHz mono WAV clips, 350 per class. The 12 classes are *hapana* (no), *kumi* (ten), *mbili* (two), *moja* (one), *nane* (eight), *ndio* (yes), *nne* (four), *saba* (seven), *sita* (six), *tano* (five), *tatu* (three) and *tisa* (nine). Clip durations range from 2.48 s to 62.24 s (median 4.32 s). Full findings are in `results/eda/eda_findings.md` and `reports/figures/draft/dataset_eda_preprocessing.md`.
 
-| File | What it is |
+The competition files are not in the repository (they are gitignored). Download them from Zindi and place them, unchanged and unextracted, in `data/raw/`:
+
+| File | Contents |
 | --- | --- |
-| `Train.csv` | 4,200 rows. Columns: `Word_id`, `Swahili_word`, `English_translation`. No duplicate ids and no missing values. |
-| `Test.csv` | 1,800 rows. Column: `Word_id` only. No labels. |
-| `SampleSubmission.csv` | 1,800 rows, same ids as `Test.csv`. Columns are `Word_id` plus 12 class names, filled with zeros. |
-| `Swahili_words.zip` | 6,000 `.wav` files, one per train and test id. No extra files. Not extracted yet. |
-| `Swahili_Audio_StarterNotebook.ipynb` | Official starter notebook. Reference only. It is not project code and it contains no completed training results. |
+| `Train.csv` | 4,200 rows: `Word_id`, `Swahili_word` (the label), `English_translation` |
+| `Test.csv` | 1,800 unlabelled ids. **Not** our research test set. |
+| `SampleSubmission.csv` | Zindi submission template |
+| `Swahili_words.zip` | 6,000 WAV files, read directly from the zip |
 
-The starter notebook states the objective as an automatic speech recognition solution that classifies simple Swahili audio into text, for uses such as voice or text prompts, translation, public health, or emergency services.
+## Experimental protocol
 
-Each `Word_id` is a `.wav` filename. Train and test ids do not overlap. Every id in the two CSV files is present in the zip, and every zip entry is listed in one of the two CSV files.
+- **One shared split.** `data/splits/shared_split.csv` holds 2,940 train, 630 validation and 630 test clips (70/15/15, stratified, seed 42), cut from `Train.csv` only. No model creates its own split.
+- **Labels** come from `Train.csv` → `Swahili_word`, joined on `Word_id`.
+- **Validation only for decisions.** Preprocessing selection, hyperparameter tuning, model selection and early stopping all use the validation split.
+- **Test once.** The internal test split (`split == "test"`) is evaluated once per approach, after its configuration is locked.
+- **No leakage.** Feature standardisation statistics are fitted on training clips only.
+- **Official test set unused.** The unlabelled Zindi `Test.csv` is never used for evaluation.
+- **Primary metric** is macro-F1. Accuracy, weighted F1, macro precision and recall, and one-vs-rest macro ROC-AUC are also reported, all from the shared `src/evaluation/metrics.py`.
+- **Balanced classes.** Every class has 350 clips, so no class weighting or oversampling is used.
 
-`Train.csv` has 12 Swahili labels. Each label occurs 350 times, and each label has one English translation:
+## The five approaches
 
-| Swahili | English | Rows |
-| --- | --- | --- |
-| hapana | no | 350 |
-| kumi | ten | 350 |
-| mbili | two | 350 |
-| moja | one | 350 |
-| nane | eight | 350 |
-| ndio | yes | 350 |
-| nne | four | 350 |
-| saba | seven | 350 |
-| sita | six | 350 |
-| tano | five | 350 |
-| tatu | three | 350 |
-| tisa | nine | 350 |
+All models share one acoustic front end: 13 MFCCs from a 25 ms Hann window with a 10 ms hop, 512-point FFT and 40 mel filters (`src/preprocessing/`). Clips longer than the window are truncated, keeping the start.
 
-The shared research split is `data/splits/shared_split.csv`. It was cut only from the 4,200 labeled rows in `Train.csv`: 70% train, 15% validation, and 15% internal test, stratified on `Swahili_word`, with random seed 42 (scikit-learn 1.8.0). Exact sizes and per-class counts are in `results/eda/split_summary.json`. Because 15% of 350 is not an integer, validation and internal test have 52 or 53 clips per class. `Test.csv` is not part of this split. It remains an unlabeled external file.
+| Approach | Owner | Input | Selection | Code | Notebook |
+| --- | --- | --- | --- | --- | --- |
+| Logistic Regression, Linear SVM | Person 1 | MFCC + Δ + ΔΔ, 8 s window, mean + std over frames (78-D) | 4 feature configurations × 4 values of C on validation | `src/preprocessing/pipeline.py`, `scripts/run_phase5_classical_baselines.py` | `person1_eda_baselines.ipynb` |
+| Bidirectional GRU | Person 2 | MFCC + Δ + ΔΔ frame sequence, 8 s window, 3 frames stacked (30 ms steps) | One-factor-at-a-time search over 13 runs: cell and direction, Δ features, frame stacking, pooling, hidden size, dropout. Plus 3 seeds. | `src/models/recurrent.py`, `src/preprocessing/sequences.py`, `scripts/run_person2_recurrent.py` | `person2_recurrent_model.ipynb` |
+| Temporal CNN | Person 3 | Static 13-MFCC frame sequence, 6 s window (shared defaults) | Two 1-D convolution layers (64 channels, kernel 5). Training budget of 30 vs 60 epochs compared. | `src/models/temporal_cnn.py` | `person3_model.ipynb` |
+| Transformer encoder | Person 4 | MFCC + Δ + ΔΔ frame sequence, 8 s window, 3 frames stacked | 4 runs: baseline, smaller model, deeper model, more dropout | `src/models/transformer.py` | `person4_model.ipynb` |
 
-The internal test split is reserved for final comparison. It is not for tuning, model selection, preprocessing fits, threshold selection, or early stopping.
+Every neural model pads variable-length batches and masks the padded steps, so each clip contributes only its real frames.
 
-The input is audio, not documents. Text TF-IDF is not a baseline for these files. Classical baselines still need an audio representation, which has not been chosen. The starter notebook's spectrogram-and-image-classifier example is not a chosen project method. Measured audio properties are in `results/eda/eda_findings.md`.
+## How to run
+
+### Option A: Google Colab (recommended for the neural models)
+
+The BiGRU needs a GPU. A full search took 39 minutes on a Colab T4; on a laptop CPU it would take days.
+
+1. Upload the four data files to a Google Drive folder, for example `My Drive/swahili_audio/`.
+2. In Colab, open a notebook with **File → Open notebook → GitHub**, choosing this repository and the `main` branch.
+3. Select **Runtime → Change runtime type → T4 GPU**.
+4. `person2_recurrent_model.ipynb` sets itself up: it mounts Drive, clones the repository, copies the data, installs the requirements, runs the experiment and saves the results back to Drive. Set `BRANCH = "main"` and `DRIVE_DATA_DIR` in its first code cell.
+5. For the other notebooks, run this cell first, then run the notebook as normal:
+
+```python
+from google.colab import drive
+import os, shutil, subprocess
+drive.mount("/content/drive")
+DATA = "/content/drive/MyDrive/swahili_audio"   # folder holding the four data files
+REPO = "/content/NLP-and-Language-Technologies"
+if not os.path.exists(REPO):
+    subprocess.run(["git", "clone", "https://github.com/Orrie-Dan/NLP-and-Language-Technologies.git", REPO], check=True)
+os.chdir(REPO)
+for f in ["Train.csv", "Test.csv", "SampleSubmission.csv", "Swahili_words.zip"]:
+    if not os.path.exists(f"data/raw/{f}"):
+        shutil.copy(f"{DATA}/{f}", f"data/raw/{f}")
+%pip install -q -r requirements.txt
+```
+
+The Colab disk is wiped when the session ends, so copy anything you want to keep to Drive.
+
+### Option B: Locally
+
+```bash
+git clone https://github.com/Orrie-Dan/NLP-and-Language-Technologies.git
+cd NLP-and-Language-Technologies
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+# place the four data files in data/raw/
+```
+
+Run the notebooks from the repository root or from `notebooks/`. Command-line entry points, run from the repository root:
+
+The EDA and classical scripts take no arguments and overwrite their committed outputs in `results/eda/` and `results/classical/` when run. `run_phase2_eda` also expects Zindi's `Swahili_Audio_StarterNotebook.ipynb` in `data/raw/`.
+
+```bash
+python -m scripts.run_phase2_eda                     # EDA tables and figures
+python -m scripts.run_phase3_investigation           # duration, energy and MFCC investigation
+python -m scripts.run_phase5_classical_baselines     # Logistic Regression and Linear SVM
+python scripts/run_person2_recurrent.py              # BiGRU search + locked test (GPU recommended)
+python scripts/run_person2_recurrent.py --quick      # 1-minute smoke test on a few clips
+python -m unittest discover tests                    # feature-pipeline tests
+```
 
 ## Repository structure
 
 | Path | Purpose |
 | --- | --- |
-| `data/raw/` | Original dataset files, unchanged after download. Contents are gitignored. |
-| `data/interim/` | Partially cleaned data, before the shared split is applied. Contents are gitignored. |
-| `data/processed/` | Data after agreed preprocessing, if a processed copy is stored. Contents are gitignored. |
-| `data/splits/` | The single fixed train/validation/test split in `shared_split.csv`. Every model must load this file. |
-| `notebooks/` | Person-specific notebooks that call shared code. They are not a second implementation of the pipeline. |
-| `src/data/` | Dataset loading. Dan. |
-| `src/preprocessing/` | Shared preprocessing decisions. Dan. |
-| `src/models/classical.py` | Classical audio baselines. Dan. Representation not chosen yet. |
-| `src/models/neural.py` | Recurrent and other neural sequential models. Persons 2, 3, and 4. |
-| `src/evaluation/` | Metrics used by every model. |
-| `src/utils/` | Reproducibility helpers, including the shared random seed. |
-| `scripts/` | Repeatable command-line entry points, once experiments exist. |
-| `results/eda/` | Tables and summaries from exploratory analysis. |
-| `results/baselines/` | Outputs from the classical baselines. |
-| `results/models/` | Outputs from neural models. Checkpoints are gitignored. |
-| `results/figures/` | Figures generated from experiments. |
-| `reports/figures/` | Figures selected for the written report. |
+| `data/raw/` | Original competition files (gitignored) |
+| `data/splits/shared_split.csv` | The single fixed train/validation/test split |
+| `src/data/` | Loading, the split, audio metadata and EDA helpers |
+| `src/preprocessing/` | Shared MFCC front end. `pipeline.py` gives aggregated vectors for the classical models; `sequences.py` gives frame sequences, deltas, frame stacking and train-only standardisation for the neural models. |
+| `src/models/` | `recurrent.py` (BiGRU/BiLSTM), `temporal_cnn.py` (CNN), `transformer.py` (Transformer encoder) |
+| `src/evaluation/metrics.py` | Shared metrics, classification reports and confusion matrices |
+| `src/utils/reproducibility.py` | Shared seed (42) and environment records |
+| `scripts/` | Repeatable command-line experiments |
+| `notebooks/` | One notebook per person, calling the shared code |
+| `results/eda/` | EDA tables and findings |
+| `results/classical/` | Classical baseline validation search and test results |
+| `results/models/recurrent/` | BiGRU search table, training histories, test metrics, per-clip predictions, seed robustness |
+| `results/person3_cnn_60epochs/` | Temporal CNN histories, test metrics, confusion matrix |
+| `results/models/person4_model/` | Transformer search table, histories, test metrics, per-clip predictions, error pairs |
+| `results/figures/` | EDA figures, plus `classical/`, `recurrent/` and `person4_model/` model figures |
+| `reports/` | Report drafts |
+| `tests/` | Unit tests for the feature pipeline, using synthetic audio |
 
-Intended workflow:
+Model checkpoints (`*.pt`), feature caches and the raw data are gitignored. They are regenerated by re-running the notebooks or scripts.
 
-```text
-Raw dataset
-    ↓
-Dataset loading
-    ↓
-Basic validation / cleaning
-    ↓
-ONE shared fixed train/validation/test split
-    ↓
-Shared preprocessing decisions
-    ↓
-    ├── audio features → classical baseline (representation not chosen yet)
-    ├── audio features → second classical baseline (not chosen yet)
-    ├── sequence representation → recurrent model
-    ├── neural sequential model
-    └── neural sequential model
-```
+## Reproducibility
 
-Dan's classical models must not create a separate train/validation/test split.
+- **Seeds.** Python, NumPy and PyTorch are seeded with 42. Each results folder contains an `environment.json` with package versions, device and run time.
+- **Hardware.** The BiGRU was trained on a Colab Tesla T4 (CUDA). The Transformer was trained on Apple Silicon (MPS) in about 7 minutes. The CNN was trained on CPU.
+- **Determinism.** Results can differ slightly across hardware because GPU recurrent and attention kernels are not fully deterministic. The BiGRU seed study shows a spread of about ±0.006 macro-F1.
 
-## Team structure
+## Known limitations
 
-Names are not recorded here. Roles are by person number.
+- **Speakers may overlap.** The dataset has no speaker labels, so the same speakers may appear in training and test. Scores may overestimate performance on new speakers.
+- **Long clips are truncated.** Clips longer than the window are cut, and accuracy is lower on them (BiGRU: 0.83 on clips of 8 s or more, vs. about 0.96 overall).
+- **Unequal search budgets.** Inputs and tuning effort differ between models (13 BiGRU runs, 4 Transformer runs, 2 CNN runs; the CNN uses a 6 s window without deltas). The report discusses this when comparing approaches.
 
-**Dan**
+## Team
 
-- data loading and the shared split
-- exploratory data analysis
-- preprocessing
-- classical baselines
-- class-imbalance investigation
-- Dataset and Exploratory Analysis section of the report
-- preprocessing portion of Methodology
-
-**Person 2**
-
-- BiLSTM/BiGRU recurrent model
-- recurrent-model methodology and results
-- introduction
-- final report assembly
-
-**Person 3**
-
-- assigned neural sequential model (architecture not chosen yet)
-- related-work synthesis
-- discussion and analysis coordination
-
-**Person 4**
-
-- assigned neural sequential model (architecture not chosen yet)
-- discussion and analysis with Person 3
-
-**Shared**
-
-- final model comparison
-- discussion
-- references
-- demo video
-- contribution tracking
-
-## Experimental principles
-
-- One fixed shared split is created once and reused by every model.
-- Experiments must be reproducible: seeds, split files, and preprocessing choices are recorded.
-- The test set is not used to choose preprocessing, features, architectures, or hyperparameters.
-- The validation set is used for model and tuning decisions.
-- The test set is reserved for final evaluation.
-- Preprocessing choices must be documented and justified.
-- Models are compared on the same held-out test set.
-- Reported numbers must come from actual experiments run on this dataset.
-- Statistics, tables, and results must not be fabricated or filled in before the code has been run.
-
-## Current status
-
-Phase 3 duration, energy, MFCC, and fixed-window investigation is complete. The shared split was not rewritten. No model has been trained, and no preprocessing pipeline has been adopted. Evidence is in `results/eda/eda_findings.md` and `results/eda/preprocessing_investigation.json`. Neural-model libraries are still absent from `requirements.txt`.
+| Role | Responsibilities |
+| --- | --- |
+| Dan Nkusi(Person 1) | Data loading, shared split, EDA, preprocessing, classical baselines; Dataset and EDA report sections; repository organisation |
+| Eddy Irasetsa(Person 2) | Bidirectional GRU model; Introduction; recurrent-model methodology and results; references formatting; |
+| Prince Mbonyumugisha(Person 3) | Temporal CNN model; evaluation-metric justification; results comparison tables; related-work synthesis |
+| Anthony Ariik(Person 4) | Transformer model; error analysis; limitations, conclusion and future work |
+| Shared | Discussion, references, demo video, contribution tracking, Report |
